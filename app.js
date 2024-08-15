@@ -1,4 +1,5 @@
 var dataDiri = {
+    maximum: 50,
     identitas: [{
         "nama" : "Meydhi Ari Nugroho"
     }]
