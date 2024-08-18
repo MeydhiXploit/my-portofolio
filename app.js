@@ -1,12 +1,15 @@
-var dataDiri = {
-    maximum: 50,
-    identitas: [{
-        "nama" : "Meydhi Ari Nugroho"
-    }]
-};
-
-
 var app = new Vue({
     el:'#app',
-    data:dataDiri
+    data:{
+        maximum: 50,
+        products: null
+    },
+    mounted: function(){
+        fetch('https://hplussport.com/api/products/order/price')
+        .then(response => response.json()
+        .then(data => {
+            this.products = data;
+        })
+    )
+    }
 });

@@ -8,20 +8,32 @@
 </head>
 <body>
     <div class="container" id="app">
-        <div v-for="item in identitas">
-            <h1>WELCOME</h1>
-            <p>{{ item.nama }}</p>    
-        </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum perspiciatis, quia quae consequuntur exercitationem odit reiciendis maiores maxime error sit necessitatibus autem. Laborum sit assumenda iusto asperiores vitae numquam laboriosam.
-        Unde, totam nam eveniet natus architecto ut molestias, tenetur, placeat illo cupiditate tempore voluptas aut et! Sapiente consequatur praesentium nisi suscipit adipisci assumenda repellat repudiandae mollitia. Et cum sit cupiditate.
-        Inventore eum dolores, in maiores eos aut vitae eveniet non exercitationem placeat quasi nesciunt quam laboriosam blanditiis laudantium quis. Dolor facilis exercitationem itaque numquam consectetur officiis adipisci optio earum architecto.</p>
-        <div>
+        <h1>Meydhi Ari Nugroho</h1>
+        <div class="form-inline mr-auto">
+            <label for="" class="font-weight-bold mr-2">Max</label>
             <input type="number" class="form-control w-25" v-model="maximum">
+        </div>
+        <input type="range" class="form-range" min="0" max="200" v-model="maximum">
+        <div v-for="item in products">
+            <div v-if="item.price <= Number(maximum)"> 
+                <div class="col-sm-4 d-flex justify-content-center">
+                    <img class="img-fluid" v-bind:src="item.image" v-bind:alt="item.name">
+                </div>
+                <div class="col">
+                    <h3 class="text-info">{{ item.name }}</h3>
+                    <p class="mb-0">{{ item.description }}</p>
+                    <div class="h5 float-left">Rp {{ item.price }}</div>
+                </div>
+            </div>   
+        </div>
+        <div>
+            <input type="text" class="form-control w-25">
         </div>
         <div>
             <button type="button" class="btn btn-primary text-white btn-lg">Click</button>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
