@@ -12,5 +12,10 @@ var app = new Vue({
             this.products = data;
         })
     )
+    },
+    methods: {
+        addItems: function(products){
+            this.cart.push(products);
+        }
     }
 });

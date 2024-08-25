@@ -21,6 +21,9 @@
         <input type="range" class="form-range" min="0" max="200" v-model="maximum">
         <div v-for="item in products">
             <div v-if="item.price <= Number(maximum)"> 
+                <div class="col-1 d-flex justify-content-between">
+                    <button class="btn btn-info" v-on:click="addItem(item)">+</button>
+                </div>
                 <div class="col-sm-4 d-flex justify-content-center">
                     <img class="img-fluid" v-bind:src="item.image" v-bind:alt="item.name">
                 </div>
